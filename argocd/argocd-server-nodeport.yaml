@@ -9,18 +9,24 @@ metadata:
   name: argocd-server-nodeport
   namespace: argocd
 spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
   ports:
   - name: http
     port: 80
     protocol: TCP
     targetPort: 8080
-    nodePort: 30007
+    nodePort: 32080
   - name: https
     port: 443
     protocol: TCP
     targetPort: 8080
-    nodePort: 30008
+    nodePort: 32081
   selector:
     app.kubernetes.io/name: argocd-server
   sessionAffinity: None
   type: NodePort
+status:
+  loadBalancer: {}

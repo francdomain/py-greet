@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: python-helloworld 
+  name: python-helloworld
   namespace: argocd
 spec:
-  destination:
-    namespace: default
-    server: https://kubernetes.default.svc
   project: default
   source:
-    path: solutions/argocd/python-manifests
-    repoURL: https://github.com/udacity/nd064_course_1 
+    repoURL: https://github.com/francdomain/py-greet.git
     targetRevision: HEAD
+    path: argocd/python-manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
   syncPolicy: {}
