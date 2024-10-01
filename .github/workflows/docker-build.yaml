@@ -35,4 +35,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: francdocmain/python-helloworld:v1.1.0
+          tags: francdocmain/python-helloworld:latest
