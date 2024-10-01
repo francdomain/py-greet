@@ -42,4 +42,4 @@ jobs:
     ## Run all pytests by inovking the `pytest command`
     - name: Test with pytest
       run: |
-        pytest
+        pytest tests/
