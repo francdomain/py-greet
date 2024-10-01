@@ -18,7 +18,7 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.12]
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8, 3.9, 3.12]
     ## Define a sequence of steps to be executed
     steps:
       ## Use the public `checkout` action  in version v2
